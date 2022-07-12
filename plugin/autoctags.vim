@@ -13,8 +13,6 @@
     function OnEvent(job_id, data, event)
         if a:event == 'stdout'
             echo "Tags file saved on " . g:tags_dir
-
-            call timer_start(30000, 'CtagsAsync')
         endif
     endfunction
 
