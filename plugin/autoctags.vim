@@ -1,8 +1,8 @@
-    if !exists(g:project_dir)
+    if !exists('g:project_dir')
         let g:project_dir = 'src'
     endif
 
-    function CtagsAsync(timer_id)
+    function CtagsAsync()
         let l:callbacks = {
                 \ 'on_stdout': function('OnEvent'),
               \ }
@@ -27,7 +27,7 @@
         if exists(a:project_dir)
             let g:project_dir = a:project_dir
         endif
-        call CtagsAsync(30000)
+        call CtagsAsync()
     endfunction
 
 " Ctags in project root file async
