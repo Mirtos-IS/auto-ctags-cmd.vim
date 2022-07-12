@@ -31,3 +31,6 @@
         endif
         call CtagsAsync(30000)
     endfunction
+
+" Ctags in project root file async
+    command! -nargs=? Ctags call Ctags(<q-args>)
