@@ -19,7 +19,7 @@
     function g:CtagsCmd()
         let current_dir = expand('%:p:h')
         let g:tags_dir = substitute(current_dir, g:project_dir . '\zs.*$', '' , '' )
-        let cmd = 'ctags -R ' . g:tags_dir
+        let cmd = 'cd ' . g:tags_dir . ' && ctags -R ' . g:tags_dir
         return cmd
     endfunction
 
